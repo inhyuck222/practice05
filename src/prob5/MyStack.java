@@ -19,7 +19,7 @@ public class MyStack {
 		buffer[++top] = pushValue;
 	}
 	
-	public void resize(int recentSize) {
+	private void resize(int recentSize) {
 		int newSize = recentSize * 2;
 		String[] newBuffer = new String[newSize];
 		
