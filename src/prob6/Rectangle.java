@@ -8,7 +8,7 @@ public class Rectangle extends Shape implements Resizable {
 		width = w;
 		height = h;
 	}
-	
+
 	@Override
 	public void resize(double s) {
 		width *= s;
@@ -16,12 +16,12 @@ public class Rectangle extends Shape implements Resizable {
 	}
 
 	@Override
-	double getArea() {		
+	double getArea() {
 		return width * height;
 	}
 
 	@Override
-	double getPerimeter() {		
+	double getPerimeter() {
 		return (width + height) * 2;
 	}
 

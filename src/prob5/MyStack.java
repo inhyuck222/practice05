@@ -1,17 +1,18 @@
 package prob5;
 
-public class MyStack {
-	private String[] buffer;
+public class MyStack<T> {
+	private T[] buffer;
 	private int size;
 	private int top;
 
+	@SuppressWarnings("unchecked")
 	public MyStack(int size) {
-		buffer = new String[size];
+		buffer = (T[])new Object[size];
 		this.size = size;
 		this.top = -1;
 	}
 
-	public void push(String pushValue) {
+	public void push(T pushValue) {
 		if ((top + 1) >= size) {
 			resize(size);
 		}
@@ -19,9 +20,10 @@ public class MyStack {
 		buffer[++top] = pushValue;
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void resize(int recentSize) {
 		int newSize = recentSize * 2;
-		String[] newBuffer = new String[newSize];
+		T[] newBuffer = (T[])new Object[newSize];
 		
 		for (int i = 0; i < recentSize; i++) {
 			newBuffer[i] = buffer[i];
@@ -31,7 +33,7 @@ public class MyStack {
 		size = newSize;
 	}
 
-	public String pop() throws MyStackException {
+	public T pop() throws MyStackException {
 		if (top < 0) {
 			throw new MyStackException("stack is empty");
 		}
@@ -45,6 +47,8 @@ public class MyStack {
 		}
 		
 		return false;
+		
+		//return top == -1;
 	}	
 
 }

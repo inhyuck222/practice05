@@ -11,7 +11,6 @@ public class RectTriangle extends Shape {
 	
 	@Override
 	double getArea() {
-		// TODO Auto-generated method stub
 		return width * height * 0.5;
 	}
 
